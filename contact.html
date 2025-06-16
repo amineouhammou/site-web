@@ -10,10 +10,14 @@
   <header>
     <h1>Garage Auto Plus</h1>
     <nav>
-      <a href="index.html">Accueil</a>
-      <a href="services.html">Services</a>
-      <a href="gallery.html">Galerie</a>
-      <a href="contact.html">Contact</a>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li> <a href="gallery.html">Galerie</a></li>
+        <li><a href="contact.html">Contact</a></li>
+
+      </ul>
+
     </nav>
      <script>
   function confirmerEnvoi(event) {
@@ -23,21 +27,49 @@
   }
 </script>
   </header>
-  <main>
-    <h2>Prise de rendez-vous</h2>
-    <form id="formulaire" onsubmit="confirmerEnvoi(event)">
-      <label>Nom :</label><input type="text" required><br>
-      <label>Email :</label><input type="email" required><br>
-      <label>Date :</label><input type="date" required><br>
-      <label>Type de service :</label>
-      <select>
-        <option>Entretien</option>
-        <option>Réparation</option>
-        <option>Diagnostic</option>
-      </select><br>
-      <button type="submit">Envoyer</button>
-    </form>
+  <main class="contact-page">
+    <h2>Contactez-nous</h2>
+
+    <div class="contact-container">
+      <!-- Formulaire -->
+      <div class="contact-form">
+        <form id="formulaire" onsubmit="confirmerEnvoi(event)">
+          <label>Nom :</label>
+          <input type="text" name="nom" required><br>
+
+          <label>Email :</label>
+          <input type="email" name="email" required><br>
+
+          <label>Message :</label>
+          <textarea name="message" rows="5" required></textarea><br>
+
+          <button type="submit">Envoyer</button>
+        </form>
+      </div>
+
+      <!-- Coordonnées -->
+      <div class="contact-info">
+        <h3>Nos coordonnées</h3>
+        <p>📍 Adresse : 123 Rue du Moteur, Casablanca, Maroc</p>
+        <p>📞 Téléphone : +212 6 12 34 56 78</p>
+        <p>✉️ Email : contact@garageautoplus.ma</p>
+
+        <!-- Carte Google Maps -->
+        <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.245459712928!2d-7.6203!3d33.5899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7cddecf4b329f%3A0xf3e6f2f3b073d2b1!2sCasablanca!5e0!3m2!1sfr!2sma!4v1620000000000"
+                width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
   </main>
+
+
+  <script>
+    function confirmerEnvoi(event) {
+      event.preventDefault();
+      alert("Merci pour votre message !");
+      document.getElementById("formulaire").reset();
+    }
+  </script>
   <footer>
     <p>© 2025 Garage Auto Plus</p>
   </footer>
